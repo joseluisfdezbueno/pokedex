@@ -1,0 +1,11 @@
+{
+    "appTitle": "Pokédex",
+    "lenguageSelectTitle": "Choose a lenguage",
+    "spanish": "Spanish",
+    "english": "English",
+    "cancelButton": "Cancel",
+    "acceptButton": "Accept",
+    "filterModalTitle": "Choose the type",
+    "pokemonWeight": "Weight: {{weight}} kg",
+    "pokemonHeight": "Height: {{height}} m"
+}

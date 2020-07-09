@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{ 'filterModalTitle' | translate }} </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="close" (click)="dismiss()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-list>
+    <ion-item *ngFor="let type of types" [class.selected]="type.id == currentTypeId" (click)="typeWasSelected(type.id)">
+      <ion-label> {{ type.name | uppercase }} </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

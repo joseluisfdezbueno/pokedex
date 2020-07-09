@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="pokemon-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{ pokemonDetail?.name | titlecase }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card [class.is-loading]="isLoading">
+    <div class="sprites">
+      <img [src]="pokemonDetail?.frontImage"/>
+      <img [src]="pokemonDetail?.backImage"/>
+    </div>
+    <ion-item class="specie" lines="none">
+      {{ pokemonDetail?.specie | titlecase }}
+    </ion-item>
+    <ion-item class="name" lines="none">
+      {{ pokemonDetail?.name | titlecase }}
+    </ion-item>
+    <ion-item> 
+      <ion-icon name="speedometer-outline"></ion-icon>
+      <ion-label> {{ 'pokemonWeight' | translate:{weight: pokemonDetail?.weight} }} </ion-label>
+    </ion-item>
+    <ion-item> 
+      <ion-icon name="paw"></ion-icon>
+      <ion-label> {{ 'pokemonHeight' | translate:{height: pokemonDetail?.height} }} </ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

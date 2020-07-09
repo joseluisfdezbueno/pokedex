@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="app-header">
+      <img src="../../../assets/icon/pokeball.png">
+      <ion-title> {{ 'appTitle' | translate }} </ion-title>
+      <ion-item lines="none">
+        <ion-label style="display:none"> {{ 'lenguageSelectTitle' | translate  }} </ion-label>
+        <ion-select [(ngModel)]="selectedLanguage" (ionChange)="languageWasSelected()" 
+                    [okText]="'acceptButton' | translate" [cancelText]="'cancelButton' | translate">
+          <ion-select-option value="es"> {{ 'spanish' | translate }} </ion-select-option>
+          <ion-select-option value="en"> {{ 'english' | translate }} </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <ion-icon name="filter-outline" slot="end" (click)="filterButtonWasPressed()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-virtual-scroll [items]="pokemonList">
+    <ion-item *virtualItem="let item" [routerLink]="'/pokemon-detail/' + item.id" routerDirection="forward">
+      <ion-label> {{ item.name | titlecase }} </ion-label>
+    </ion-item>
+  </ion-virtual-scroll>
+
+  <ion-infinite-scroll threshold="10%" (ionInfinite)="loadPokemonsAnyType()">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

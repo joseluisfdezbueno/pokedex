@@ -1,0 +1,24 @@
+ion-content {
+    ion-card {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        &.is-loading {
+            display: none;
+        }   
+        .sprites {
+            display: flex;
+            justify-content: center;
+        }
+        ion-item {
+            font-size: 14px;
+            &.name {
+                font-size: 16px;
+                font-weight: bold;
+            }
+            ion-icon {
+                margin-left: 16px;
+                margin-right: 4px;
+            }
+        }
+    }
+}
